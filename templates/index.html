@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <head>
-  <title>OpenAI Quickstart</title>
+  <title>Copybara Tagline Generator</title>
   <link
     rel="shortcut icon"
-    href="{{ url_for('static', filename='dog.png') }}"
+    href="{{ url_for('static', filename='copybarapic.png') }}"
   />
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
 </head>
 
 <body>
-  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
-  <h3>Name my pet</h3>
+  <img src="{{ url_for('static', filename='copybarapic.png') }}" class="icon" />
+  <h1>Copybara Tagline Generator</h1>
+  <h2>Powered by GPT-3</h2>
   <form action="/" method="post">
-    <input type="text" name="animal" placeholder="Enter an animal" required />
-    <input type="submit" value="Generate names" />
+    <p>What's your product?</p>
+    <input type="text" name="animal" placeholder="Enter your product" required />
+    <p>How creative should Copybara be? 0: least creative, 1: most creative. Increments of 0.1.</p>
+    <input type="number" name="temperature" min="0.0" max="1.0" step="0.1" required />
+    <p></p>
+    <input type="submit" value="Generate taglines" />
   </form>
   {% if result %}
   <div class="result">{{ result }}</div>
