@@ -63,4 +63,6 @@ input[type="submit"] {
 .result {
   font-weight: bold;
   margin-top: 40px;
+  width:30%;
+  font-size:25px;
 }
